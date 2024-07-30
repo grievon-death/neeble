@@ -1,0 +1,16 @@
+# VSCODE
+.vscode
+
+# ENVVARS
+environment/*
+
+# Pycache
+.pyc
+__pycache__
+
+# Others
+docker-compose-okteto.yml
+
+# Personal virtual environments
+
+penv/*

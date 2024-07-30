@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  neeble:
+    build:
+      context: .
+    restart: on-failure
+    container_name: neeble-bot
+    command: make production
+    environment:
+      DISCORD_BOT_TOKEN: $DISCORD_BOT_TOKEN
+      OPENWEATHER_API_TOKEN: $OPENWEATHER_API_TOKEN
+      MYSQL_HOST: $MYSQL_HOST
+      MYSQL_PORT: $MYSQL_PORT
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      LOGLEVEL: $LOGLEVEL
+    depends_on:
+      - mysql
+
+
+volumes:
+  mysql:
